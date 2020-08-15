@@ -1,6 +1,7 @@
 /* https://www.youtube.com/watch?v=DZg6UfS5zYg navbar ref*/
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_button_on_image banner ref*/
 @import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Sanchez&display=swap");
+/* Global */
 * {
   margin: 0;
   padding: 0;
@@ -18,10 +19,201 @@ ul {
   list-style-type: none;
 }
 
+/* Desktop/ */
+/* Navbar */
+header {
+  width: 100%;
+  height: 100px;
+  padding: 0 20px;
+}
+.navbar__link {
+  margin-left: 40px;
+}
+.navbar__links ul {
+  display: flex;
+}
+.navbar__link a {
+  color: #000;
+}
+.navbar__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar__logo {
+  width: 100px;
+}
+.navbar__hamburger,
+.navbar__toggler,
+.navbar__overlay {
+  display: none;
+}
+.navbar__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 90%;
+}
+/* Home */
+.home__button {
+  position: absolute;
+  top: 700px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 55px;
+  background-color: white;
+  color: #010101;
+  border: none;
+  font-family: Sanchez, sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 5px;
+}
+/* Products */
+.products {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.products__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.products__header {
+  font-family: Sanchez, serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 30%;
+  margin-bottom: 50px;
+}
+.product__image {
+  width: 300px;
+  margin-bottom: 30px;
+}
+.product__name {
+  font-family: Sanchez, serif;
+  text-align: center;
+  font-size: 20px;
+}
+.product__desc {
+  text-align: center;
+  font-size: 15px;
+  color: gray;
+}
+.product__price {
+  text-align: center;
+  font-size: 20px;
+  color: #1d3f49;
+}
+/* Footer */
+.footer {
+  width: 100%;
+  padding: 0 20px;
+  background-color: #aabcbf;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.footer-form h3 {
+  font-family: Sanchez, serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.footer-form p {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.footer-form input[type="email"] {
+  width: 240px;
+  height: 54px;
+  background-color: white;
+  box-shadow: none;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  outline: none;
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.footer-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-form input[type="email"]::placeholder {
+  color: gray;
+  font-family: Didact Gothic, sans-serif;
+}
+.footer-form input[type="submit"] {
+  width: 240px;
+  height: 54px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  background-color: #1d3f49;
+  border-radius: 5px;
+  font-family: Sanchez, serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer__links {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.footer__link {
+  margin-top: 20px;
+}
+.footer__link a {
+  font-size: 16px;
+  color: #000000;
+}
+
+/* Tablets */
+@media (min-width: 640px) and (max-width: 1024px) {
+  /* Navbar */
+  .navbar__links ul {
+    display: flex;
+  }
+  /* Home */
+  .home__button {
+    top: 470px;
+  }
+  /* Products */
+  .product {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+  }
+  .product__image {
+    width: 250px;
+  }
+}
+
+/* Phones */
 @media (min-width: 320px) and (max-width: 639px) {
   /* Navbar Small Device */
+
   header {
-    width: 100%;
     height: 80px;
   }
   .navbar__wrapper {
@@ -35,6 +227,11 @@ ul {
     align-items: center;
     padding: 30px;
     background-color: white;
+  }
+  .navbar__hamburger,
+  .navbar__toggler,
+  .navbar__overlay {
+    display: block;
   }
   .navbar__logo {
     position: relative;
@@ -144,6 +341,7 @@ ul {
   .navbar__link {
     width: 80%;
     margin-bottom: 40px;
+    margin-left: 0;
     border-bottom: 1px solid #010101;
     padding: 0 5px 15px 0;
   }
@@ -180,113 +378,22 @@ ul {
   /* Products */
   .products {
     padding-top: 50px;
+    padding-bottom: 50px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .products__header {
-    font-family: Sanchez, serif;
-    font-size: 30px;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-  }
   .product {
     margin-bottom: 30px;
+  }
+  .products__header {
+    margin-bottom: 50px;
   }
   .product__image {
     width: 300px;
     height: 300px;
     margin-bottom: 30px;
-  }
-  .product__name {
-    font-family: Sanchez, serif;
-    text-align: center;
-    font-size: 20px;
-  }
-  .product__desc {
-    text-align: center;
-    font-size: 15px;
-    color:gray;
-    
-  }.product__price {
-    text-align: center;
-    font-size: 20px;
-    color: #1D3F49;
-  }
-  /* Footer */
-  .footer {
-    width: 100%;
-    padding: 0 20px;
-    background-color: #AABCBF;
-    display: flex;
-    flex-direction: column;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .footer-form h3 {
-    font-family: Sanchez, serif;
-    font-size: 30px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .footer-form p {
-    font-size: 16px;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-  .footer-form input[type="email"] {
-    width: 100%;
-    height: 54px;
-    background-color: white;
-    box-shadow: none;
-    border: none;
-    border-radius: 5px;
-    color: black;
-    outline: none;
-    font-size: 19px;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-  .footer-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-form input[type="email"]::placeholder {
-    color: black;
-    font-family: Didact Gothic, sans-serif;
-  }
-  .footer-form input[type="submit"] {
-    width: 240px;
-    height: 54px;
-    font-size: 20px;
-    color: white;
-    border: none;
-    background-color: #1D3F49;
-    border-radius: 5px;
-    font-family: Sanchez, serif;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-
-  }
-  .footer__links {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer__link {
-    margin-top: 20px;
-  }
-  .footer__link a {
-    font-size: 16px;
-    color: #000000;
-  
   }
 }
